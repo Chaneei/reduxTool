@@ -1,7 +1,7 @@
 import Leftbar from "./components/leftbar/Leftbar";
+import Update from "./components/update/Update";
 import Navbar from "./components/navbar/Navbar";
 import Rightbar from "./components/rightbar/Rightbar";
-import Update from "./components/update/Update";
 import "./app.css";
 
 const App = () => {
