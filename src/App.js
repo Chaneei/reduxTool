@@ -3,15 +3,17 @@ import Update from "./components/update/Update";
 import Navbar from "./components/navbar/Navbar";
 import Rightbar from "./components/rightbar/Rightbar";
 import "./app.css";
+import { useState } from "react";
 
 const App = () => {
+  const [name, setName] = useState("승찬");
   return (
     <>
-      <Navbar />
+      <Navbar name={name} />
       <div className="container">
-        <Leftbar />
-        <Update />
-        <Rightbar />
+        <Leftbar name={name} />
+        <Update name={name} />
+        <Rightbar name={name} />
       </div>
     </>
   );

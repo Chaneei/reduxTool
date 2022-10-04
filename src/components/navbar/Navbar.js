@@ -1,8 +1,10 @@
 import { ArrowDropDown, Search } from "@material-ui/icons";
 import React from "react";
+import { useSelector } from "react-redux";
 import "./navbar.css";
 
 const Navbar = () => {
+  const name = useSelector((state) => state.user.name);
   return (
     <div className="navbar">
       <div className="navbarWrapper">
@@ -25,10 +27,10 @@ const Navbar = () => {
         <div className="navbarRight">
           <img
             className="avatar"
-            src="https://images.pexels.com/photos/3024627/pexels-photo-3024627.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
+            src="https://chan-portfolio-site.web.app/static/media/me-about.fb9f209068b03765935b.jpg"
+            alt="프로필"
           />
-          <span className="navbarName">승찬</span>
+          <span className="navbarName">{name}</span>
           <ArrowDropDown />
         </div>
       </div>

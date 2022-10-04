@@ -2,15 +2,14 @@ import React from "react";
 import Warning from "../warning/Warning";
 import "./update.css";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 export default function Update() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-
+  const user = useSelector((state) => state.user);
   return (
     <div className="update">
       <div className="updateWrapper">
-        <h3 className="updateTitle">회원 정보 수정하기</h3>
+        <h3 className="updateTitle">회원 정보</h3>
         <Warning />
         <button className="delete">회원 탈퇴하기</button>
         <div className="updateContainer">

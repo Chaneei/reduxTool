@@ -1,10 +1,12 @@
 import React from "react";
 import "./recommendation.css";
+import { useSelector } from "react-redux";
 
 export default function Recommendation({ type }) {
+  const name = useSelector((state) => state.user.name);
   const title =
     type === "user"
-      ? "승찬님을 위한 포스트"
+      ? `${name}님을 위한 포스트`
       : type === "popular"
       ? "인기있는 포스트"
       : "주간 인기 포스트";
