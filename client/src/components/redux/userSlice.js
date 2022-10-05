@@ -3,22 +3,24 @@ import { createSlice } from "@reduxjs/toolkit";
 export const userSlice = createSlice({
   name: "user",
   initialState: {
-    name: "찬찬",
-    email: "lsc@gmail.com",
+    userInfo: { name: "찬찬", email: "lsc@gmail.com" },
+    pending: false,
+    error: false,
   },
   reducers: {
-    update: (state, action) => {
-      state.name = action.payload.name;
-      state.email = action.payload.email;
+    updateStart: (state) => {
+      state.pending = true;
     },
-    remove: (state) => (state = {}),
-    //{} state값이 empty String으로 바뀜
-
-    addHello: (state, action) => {
-      state.name = "Hello" + action.payload.name;
+    updateSuccess: (state, action) => {
+      state.pending = false;
+      state.userInfo = action.payload;
+    },
+    updateError: (state) => {
+      state.error = true;
+      state.pending = false;
     },
   },
 });
 
-export const { update, remove, addHello } = userSlice.actions;
+export const { updateError, updateStart, updateSuccess } = userSlice.actions;
 export default userSlice.reducer;
